@@ -1,0 +1,32 @@
+require_relative 'crud'
+
+class Student
+  include Crud
+  attr_accessor :first_name, :last_name, :email, :username, :password
+
+  @first_name
+  @last_name
+  @email
+  @username = 'Unknown'
+  @password
+
+  def initialize(first_name, lastname, username, email, password)
+    @first_name = first_name
+    @last_name = lastname
+    @username = username
+    @email = email
+    @password = password
+  end
+
+  def to_s
+    "(first name: #{first_name}, last name: #{last_name}, username: #{username}, email: #{email}, " +
+        "password: #{password})"
+  end
+
+end
+
+student = Student.new 'First', 'Last', 'User', 'Email', '333'
+student.first_name = "rubeen".capitalize
+
+p student.create_hashed_pass "333"
+
