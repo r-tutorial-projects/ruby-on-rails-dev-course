@@ -10,4 +10,4 @@ WORKDIR /usr/src/app/
 RUN chmod +x /usr/src/app/bin/rails
 RUN bundle install && yarn install
 EXPOSE 3000
-CMD rails s -b 0.0.0.0
+CMD rails s -b dev-rubeen-ruby

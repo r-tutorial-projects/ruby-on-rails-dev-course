@@ -1,17 +1,17 @@
-<h1>Create a new article</h1>
+<h1>Edit article</h1>
 
 <% if @article.errors.any? %>
   <h2>Following errors exists:</h2>
   <ul>
-    <% @article.errors.full_messages.each do | m | %>
-    <li>
+    <% @article.errors.full_messages.each do |m| %>
+      <li>
         <%= m %>
-    </li>
-<% end %>
-</ul>
+      </li>
+    <% end %>
+  </ul>
 <% end %>
 
-<%= form_with scope: :article, url: articles_path, local: true do |f| %>
+<%= form_with model: @article, local: true do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
