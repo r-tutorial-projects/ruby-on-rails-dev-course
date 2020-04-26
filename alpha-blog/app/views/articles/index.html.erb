@@ -1,5 +1,29 @@
-<h1>All articles</h1>
+<div class="container mt-3 col-8">
+  <h1>All articles</h1>
 
+  <div class="card-columns">
+    <% @articles.each do |article| %>
+      <div class="card text-center shadow rounded">
+        <div class="card-header">
+          by Rubeen
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to article.title, article, class: 'text-primary' %></h5>
+          <p class="card-text"><%= article.description %></p>
+          <div class="btn-group-vertical" role="group" aria-label="Basic example">
+            <a class="btn btn-outline-primary"><span class="text-primary">Show</span></a>
+            <a class="btn btn-outline-warning"><span class="text-warning">Edit</span></a>
+            <a class="btn btn-outline-danger"><span class="text-danger">Delete</span></a>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+          Created <%= time_ago_in_words(article.created_at) %> hour ago, edited <%= time_ago_in_words(article.updated_at) %> hour ago
+        </div>
+      </div>
+    <% end %>
+</div>
+
+<!--
 <table>
   <thead>
   <tr>
@@ -9,17 +33,15 @@
   </tr>
   </thead>
   <tbody>
-  <% @articles.each do |article| %>
+
     <tr>
-      <td><%= article.title %></td>
-      <td><%= article.description %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td></td>
+      <td><</td>
+
     </tr>
-  <% end %>
   </tbody>
 </table>
 
-<p><%= link_to 'Create', new_article_path %></p>
-<p><%= link_to 'Home', root_path %></p>
+<p><%=# link_to 'Create', new_article_path %></p>
+<p><%= # link_to 'Home', root_path %></p>
+-->
