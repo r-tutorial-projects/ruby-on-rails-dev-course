@@ -64,6 +64,20 @@
   }
 }
 
+.page-container {
+  background: rgb(233,233,233);
+  text-align: left;
+
+  .form-container {
+    background: $primary;
+    padding: 1em;
+
+    .col-9 * {
+      width: 100%;
+    }
+  }
+}
+
 
 body, html {
   height: 100%;

@@ -1,16 +1,23 @@
-<%= render 'article_errors' %>
+<%= render 'shared/errors' %>
 
 <%= form_with model: @article, local: true do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
+  <div class="form bg-light p-3">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label :title, class: 'input-group-text' %>
+      </div>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label :description, class: 'input-group-text' %>
+      </div>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit class: 'btn btn-outline-primary btn-lg btn-block' %>
+    </div>
+  </div>
 <% end %>

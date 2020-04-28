@@ -1,0 +1,15 @@
+<% if @article.errors.any? %>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Form errors exists!</strong> Please check the input fields below. Got following validation faults:<br>
+    <ul>
+      <% @article.errors.full_messages.each do |m| %>
+        <li>
+          <%= m %>
+        </li>
+      <% end %>
+    </ul>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
